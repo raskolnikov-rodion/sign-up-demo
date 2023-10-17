@@ -1,7 +1,7 @@
 {
   "name": "@gus/source",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "LGPL-3.0-only",
   "scripts": {},
   "private": true,
   "dependencies": {
