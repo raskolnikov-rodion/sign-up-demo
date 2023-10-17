@@ -1,0 +1,36 @@
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      actions: 'read'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: master
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run affected:lint
+
+      - name: Stylelint
+        run: npm run affected:stylelint
+
+      - name: Unit Tests
+        run: npm run affected:test
+
+      - name: Build
+        run: npm run affected:build
+
+      - name: E2E Tests
+        run: npm run affected:e2e
