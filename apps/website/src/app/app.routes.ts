@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from '@gus/home';
 
 export const appRoutes: Route[] = [
   {
