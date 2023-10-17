@@ -1,16 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { NotFoundComponent } from './not-found.component';
 
-describe('AppComponent', () => {
+describe('NotFoundComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, RouterTestingModule],
+      imports: [NotFoundComponent],
     }).compileComponents();
   });
 
   it('should create', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(NotFoundComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
