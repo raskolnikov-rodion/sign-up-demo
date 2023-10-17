@@ -71,6 +71,9 @@
         "lintFilePatterns": ["apps/website/**/*.ts", "apps/website/**/*.html"]
       }
     },
+    "stylelint": {
+      "command": "stylelint apps/website/**/*.scss"
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
