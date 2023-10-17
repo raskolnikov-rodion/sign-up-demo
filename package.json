@@ -25,7 +25,6 @@
     "@angular/platform-browser": "~16.2.0",
     "@angular/platform-browser-dynamic": "~16.2.0",
     "@angular/router": "~16.2.0",
-    "@nx/angular": "16.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -40,6 +39,7 @@
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "~16.2.0",
     "@angular/language-service": "~16.2.0",
+    "@nx/angular": "16.10.0",
     "@nx/cypress": "16.10.0",
     "@nx/eslint-plugin": "16.10.0",
     "@nx/jest": "16.10.0",
