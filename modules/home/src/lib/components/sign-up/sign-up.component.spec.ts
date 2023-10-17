@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CustomerData, SignUpService } from '../../services/sign-up.service';
-import { SignUpComponent } from './sign-up.component';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { delay, of } from 'rxjs';
+import { CustomerData, SignUpService } from '../../services/sign-up.service';
+import { SignUpComponent } from './sign-up.component';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;
@@ -16,9 +17,7 @@ describe('SignUpComponent', () => {
         {
           provide: SignUpService,
           useValue: {
-            signUpCustomer: jest
-              .fn()
-              .mockImplementation(() => ({ subscribe: jest.fn() })),
+            signUpCustomer: jest.fn().mockImplementation(() => of({})),
           },
         },
       ],
@@ -42,6 +41,13 @@ describe('SignUpComponent', () => {
       email: 'jc@signup.example.com',
     };
 
+    const signUpCustomer = () => {
+      component.form.setValue(customer);
+      component.form.updateValueAndValidity();
+      component.onSubmit();
+      fixture.detectChanges();
+    };
+
     beforeEach(() => {
       jest.spyOn(service, 'signUpCustomer');
     });
@@ -52,22 +58,28 @@ describe('SignUpComponent', () => {
     });
 
     it('should call signUpCustomer if form is valid', () => {
-      component.form.setValue(customer);
-      component.form.updateValueAndValidity();
-      component.onSubmit();
+      signUpCustomer();
       expect(service.signUpCustomer).toHaveBeenCalledTimes(1);
       expect(service.signUpCustomer).toBeCalledWith(customer);
     });
 
     it('should display the loading indicator after submitting data', () => {
-      component.form.setValue(customer);
-      component.form.updateValueAndValidity();
-      component.onSubmit();
-      fixture.detectChanges();
+      jest.spyOn(service, 'signUpCustomer').mockImplementationOnce(() => {
+        return of({}).pipe(delay(3000));
+      });
+      signUpCustomer();
       const loading = fixture.debugElement.query(
         By.css("[data-test='sign-up-loading']")
-      ).nativeElement;
+      )?.nativeElement;
       expect(loading).toBeTruthy();
+    });
+
+    it('should display the success indicator after successful sign-up', () => {
+      signUpCustomer();
+      const success = fixture.debugElement.query(
+        By.css("[data-test='sign-up-success']")
+      )?.nativeElement;
+      expect(success).toBeTruthy();
     });
 
     afterEach(() => {

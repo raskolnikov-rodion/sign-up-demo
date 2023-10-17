@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf } from '@angular/common';
+import { AsyncPipe, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -20,6 +20,7 @@ import { CustomerData, SignUpService } from '../../services/sign-up.service';
 enum SIGNUP_STATE {
   WAITING_SUBMISSION = 'WAITING_SUBMISSION',
   LOADING = 'LOADING',
+  SUCCESS = 'SUCCESS',
 }
 
 @Component({
@@ -34,6 +35,8 @@ enum SIGNUP_STATE {
     FormsModule,
     NgIf,
     AsyncPipe,
+    NgSwitch,
+    NgSwitchCase,
   ],
 })
 export class SignUpComponent {
@@ -63,7 +66,10 @@ export class SignUpComponent {
 
   private onSignUpSuccess() {
     this.resetForm();
-    this._state$.next(SIGNUP_STATE.WAITING_SUBMISSION);
+    this._state$.next(SIGNUP_STATE.SUCCESS);
+    setTimeout(() => {
+      this._state$.next(SIGNUP_STATE.WAITING_SUBMISSION);
+    }, 5000);
   }
 
   private resetForm() {

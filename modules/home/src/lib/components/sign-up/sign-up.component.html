@@ -56,16 +56,24 @@
       mat-raised-button
       color="primary"
       type="submit"
-      [disabled]="!form.valid"
+      [disabled]="!form.valid || state === SIGNUP_STATE.LOADING"
       [attr.data-test]="'sign-up-submit'"
     >
       Submit
     </button>
   </form>
-  <p
-    *ngIf="state === SIGNUP_STATE.LOADING"
-    [attr.data-test]="'sign-up-loading'"
-  >
-    Loading...
-  </p>
+  <ng-container [ngSwitch]="state">
+    <p
+      *ngSwitchCase="SIGNUP_STATE.LOADING"
+      [attr.data-test]="'sign-up-loading'"
+    >
+      Loading...
+    </p>
+    <p
+      *ngSwitchCase="SIGNUP_STATE.SUCCESS"
+      [attr.data-test]="'sign-up-success'"
+    >
+      Thank you!
+    </p>
+  </ng-container>
 </ng-container>
