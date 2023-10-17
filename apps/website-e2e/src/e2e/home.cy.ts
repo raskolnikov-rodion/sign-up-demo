@@ -32,6 +32,9 @@ describe('Home Page', () => {
       getEmailInput().focus().type('jc@signup.example.com');
       getSignUpSubmit().should('be.enabled').click();
       cy.wait(['@submitSignUp']);
+      getFirstNameInput().should('have.value', '');
+      getLastNameInput().should('have.value', '');
+      getEmailInput().should('have.value', '');
     });
   });
 });
