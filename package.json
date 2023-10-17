@@ -10,6 +10,7 @@
     "affected:test": "nx affected -t test --parallel=3",
     "dep-graph": "nx dep-graph",
     "e2e:website:watch": "nx e2e website-e2e --watch",
+    "start:mock-server": "node apps/mock-server/mock-server.js",
     "prepare": "husky install"
   },
   "private": true,
@@ -60,6 +61,7 @@
     "jest-environment-jsdom": "^29.4.1",
     "jest-preset-angular": "~13.1.0",
     "jsonc-eslint-parser": "^2.1.0",
+    "mocky": "^0.1.11",
     "nx": "16.10.0",
     "prettier": "^2.6.2",
     "stylelint": "^15.11.0",

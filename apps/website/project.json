@@ -8,21 +8,14 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/website",
         "index": "apps/website/src/index.html",
         "main": "apps/website/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/website/tsconfig.app.json",
-        "assets": [
-          "apps/website/src/favicon.ico",
-          "apps/website/src/assets"
-        ],
+        "assets": ["apps/website/src/favicon.ico", "apps/website/src/assets"],
         "styles": [
           "@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/website/src/styles.scss"
@@ -66,7 +59,10 @@
           "browserTarget": "website:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/website/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -76,14 +72,9 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/website/**/*.ts",
-          "apps/website/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/website/**/*.ts", "apps/website/**/*.html"]
       }
     },
     "stylelint": {
@@ -91,9 +82,7 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/website/jest.config.ts",
         "passWithNoTests": true
