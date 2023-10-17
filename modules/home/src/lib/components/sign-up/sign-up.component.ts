@@ -1,10 +1,5 @@
 import { NgIf } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  isDevMode,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormsModule,
@@ -13,6 +8,7 @@ import {
 } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CustomerData, SignUpService } from '../../services/sign-up.service';
 
 @Component({
   standalone: true,
@@ -34,7 +30,10 @@ export class SignUpComponent {
     email: ['', [Validators.required, Validators.email]],
   });
 
+  private service = inject(SignUpService);
+
   onSubmit() {
-    if (isDevMode()) console.info(this.form.value);
+    if (!this.form.valid) return;
+    this.service.signUpCustomer(this.form.value as CustomerData).subscribe();
   }
 }

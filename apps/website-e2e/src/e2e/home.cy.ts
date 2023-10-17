@@ -15,7 +15,14 @@ describe('Home Page', () => {
   });
 
   describe('Sign-up Form', () => {
-    it('should display a form that allows user to enter data for sign-up', () => {
+    beforeEach(() => {
+      cy.intercept(
+        { method: 'post', url: '/api/signup' },
+        { statusCode: 200 }
+      ).as('submitSignUp');
+    });
+
+    it('should allow user to enter data and sign-up', () => {
       getSignUpForm().should('exist');
       getSignUpSubmit().should('be.disabled');
       getFirstNameInput().focus().type('John');
@@ -23,7 +30,8 @@ describe('Home Page', () => {
       getLastNameInput().focus().type('Cena');
       getSignUpSubmit().should('be.disabled');
       getEmailInput().focus().type('jc@signup.example.com');
-      getSignUpSubmit().should('be.enabled');
+      getSignUpSubmit().should('be.enabled').click();
+      cy.wait(['@submitSignUp']);
     });
   });
 });
