@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { delay, of } from 'rxjs';
+import { delay, of, throwError } from 'rxjs';
 import { CustomerData, SignUpService } from '../../services/sign-up.service';
 import { SignUpComponent } from './sign-up.component';
 
@@ -80,6 +80,17 @@ describe('SignUpComponent', () => {
         By.css("[data-test='sign-up-success']")
       )?.nativeElement;
       expect(success).toBeTruthy();
+    });
+
+    it('should display the error indicator after failed sign-up', () => {
+      jest.spyOn(service, 'signUpCustomer').mockImplementationOnce(() => {
+        return throwError(() => 'Error!');
+      });
+      signUpCustomer();
+      const error = fixture.debugElement.query(
+        By.css("[data-test='sign-up-error']")
+      )?.nativeElement;
+      expect(error).toBeTruthy();
     });
 
     afterEach(() => {

@@ -75,5 +75,8 @@
     >
       Thank you!
     </p>
+    <p *ngSwitchCase="SIGNUP_STATE.ERROR" [attr.data-test]="'sign-up-error'">
+      Sorry, an error occurred. Please try again!
+    </p>
   </ng-container>
 </ng-container>

@@ -21,6 +21,7 @@ enum SIGNUP_STATE {
   WAITING_SUBMISSION = 'WAITING_SUBMISSION',
   LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR',
 }
 
 @Component({
@@ -61,6 +62,7 @@ export class SignUpComponent {
     this._state$.next(SIGNUP_STATE.LOADING);
     this.service.signUpCustomer(this.form.value as CustomerData).subscribe({
       next: () => this.onSignUpSuccess(),
+      error: () => this.onSignUpError(),
     });
   }
 
@@ -75,5 +77,9 @@ export class SignUpComponent {
   private resetForm() {
     this.form.reset();
     this.formDirective?.resetForm();
+  }
+
+  private onSignUpError() {
+    this._state$.next(SIGNUP_STATE.ERROR);
   }
 }
