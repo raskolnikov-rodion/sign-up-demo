@@ -40,3 +40,20 @@
     grid-area: form;
   }
 }
+
+@media (width < 500px) {
+  .home {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media (width < 900px) {
+  .home {
+    display: block;
+
+    &__product {
+      display: none;
+    }
+  }
+}
