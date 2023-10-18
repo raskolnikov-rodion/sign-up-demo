@@ -3,42 +3,6 @@
   flex-direction: column;
   height: 100%;
 
-  &__state-box {
-    height: 4rem;
-    margin: 1rem 0;
-  }
-
-  &__spinner {
-    display: inline-block;
-    width: 2rem !important;
-    height: 2rem !important;
-    margin-right: 1rem;
-  }
-
-  &__state {
-    text-align: center;
-    padding: 1rem;
-    border: 2px solid;
-    border-radius: 5px;
-    background-color: var(--color-background-light);
-
-    &--loading {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-color: var(--color-secondary);
-    }
-
-    &--success {
-      background-color: var(--color-success);
-      color: var(--color-white);
-    }
-
-    &--error {
-      border-color: var(--color-error);
-    }
-  }
-
   &__submit {
     margin-top: auto;
   }

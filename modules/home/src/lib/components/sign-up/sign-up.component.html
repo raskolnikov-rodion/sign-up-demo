@@ -53,32 +53,7 @@
       </mat-error>
     </mat-form-field>
 
-    <div class="form__state-box">
-      <ng-container [ngSwitch]="state">
-        <div
-          *ngSwitchCase="SIGNUP_STATE.LOADING"
-          class="form__state form__state--loading"
-          [attr.data-test]="'sign-up-loading'"
-        >
-          <mat-spinner class="form__spinner" color="accent"></mat-spinner>
-          <span>Preparing a special offer for you...</span>
-        </div>
-        <div
-          *ngSwitchCase="SIGNUP_STATE.SUCCESS"
-          class="form__state form__state--success"
-          [attr.data-test]="'sign-up-success'"
-        >
-          <span>Thank you! Check your inbox for a special surprise!</span>
-        </div>
-        <div
-          *ngSwitchCase="SIGNUP_STATE.ERROR"
-          class="form__state form__state--error"
-          [attr.data-test]="'sign-up-error'"
-        >
-          <span>Sorry, an error occurred. Please try again!</span>
-        </div>
-      </ng-container>
-    </div>
+    <gus-sign-up-state [state]="state"></gus-sign-up-state>
 
     <button
       mat-raised-button

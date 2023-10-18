@@ -1,0 +1,24 @@
+<ng-container [ngSwitch]="state">
+  <div
+    *ngSwitchCase="SIGNUP_STATE.LOADING"
+    class="state state--loading"
+    [attr.data-test]="'sign-up-loading'"
+  >
+    <mat-spinner class="state__spinner" color="accent"></mat-spinner>
+    <span>Preparing a special offer for you...</span>
+  </div>
+  <div
+    *ngSwitchCase="SIGNUP_STATE.SUCCESS"
+    class="state state--success"
+    [attr.data-test]="'sign-up-success'"
+  >
+    <span>Thank you! Check your inbox for a smiley gift!</span>
+  </div>
+  <div
+    *ngSwitchCase="SIGNUP_STATE.ERROR"
+    class="state state--error"
+    [attr.data-test]="'sign-up-error'"
+  >
+    <span>Sorry, an error occurred. Please try again!</span>
+  </div>
+</ng-container>
