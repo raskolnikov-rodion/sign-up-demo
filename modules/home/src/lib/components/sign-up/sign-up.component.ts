@@ -1,4 +1,4 @@
-import { AsyncPipe, NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -15,16 +15,10 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BehaviorSubject } from 'rxjs';
 import { CustomerData, SignUpService } from '../../services/sign-up.service';
-
-enum SIGNUP_STATE {
-  WAITING_SUBMISSION = 'WAITING_SUBMISSION',
-  LOADING = 'LOADING',
-  SUCCESS = 'SUCCESS',
-  ERROR = 'ERROR',
-}
+import { SignUpStateComponent } from './sign-up-state/sign-up-state.component';
+import { SIGNUP_STATE } from './sign-up.models';
 
 @Component({
   standalone: true,
@@ -39,10 +33,8 @@ enum SIGNUP_STATE {
     FormsModule,
     NgIf,
     AsyncPipe,
-    NgSwitch,
-    NgSwitchCase,
     MatButtonModule,
-    MatProgressSpinnerModule,
+    SignUpStateComponent,
   ],
 })
 export class SignUpComponent {
