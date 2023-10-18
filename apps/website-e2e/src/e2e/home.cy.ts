@@ -11,7 +11,7 @@ describe('Home Page', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display the Home header', () => {
-    getHeader().contains('Welcome!');
+    getHeader().contains("You're one step away from a Smile!");
   });
 
   describe('Sign-up Form', () => {
