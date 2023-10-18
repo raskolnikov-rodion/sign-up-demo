@@ -6,7 +6,7 @@ const SIGN_UP_HANDLERS = [
     method: 'POST',
     res: function (req, res, callback) {
       setTimeout(() => {
-        callback(null, { status: Math.random() > 0.5 ? 200 : 500 });
+        callback(null, { status: Math.random() > 0.2 ? 200 : 500 });
       }, 3000);
     },
   },

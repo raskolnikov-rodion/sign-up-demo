@@ -2,6 +2,7 @@
   <form
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
+    class="form"
     [attr.data-test]="'sign-up-form'"
   >
     <mat-form-field>
@@ -52,31 +53,42 @@
       </mat-error>
     </mat-form-field>
 
+    <div class="form__state-box">
+      <ng-container [ngSwitch]="state">
+        <div
+          *ngSwitchCase="SIGNUP_STATE.LOADING"
+          class="form__state form__state--loading"
+          [attr.data-test]="'sign-up-loading'"
+        >
+          <mat-spinner class="form__spinner" color="accent"></mat-spinner>
+          <span>Preparing a special offer for you...</span>
+        </div>
+        <div
+          *ngSwitchCase="SIGNUP_STATE.SUCCESS"
+          class="form__state form__state--success"
+          [attr.data-test]="'sign-up-success'"
+        >
+          <span>Thank you! Check your inbox for a special surprise!</span>
+        </div>
+        <div
+          *ngSwitchCase="SIGNUP_STATE.ERROR"
+          class="form__state form__state--error"
+          [attr.data-test]="'sign-up-error'"
+        >
+          <span>Sorry, an error occurred. Please try again!</span>
+        </div>
+      </ng-container>
+    </div>
+
     <button
       mat-raised-button
       color="primary"
       type="submit"
       [disabled]="!form.valid || state === SIGNUP_STATE.LOADING"
+      class="form__submit"
       [attr.data-test]="'sign-up-submit'"
     >
-      Submit
+      Join
     </button>
   </form>
-  <ng-container [ngSwitch]="state">
-    <p
-      *ngSwitchCase="SIGNUP_STATE.LOADING"
-      [attr.data-test]="'sign-up-loading'"
-    >
-      Loading...
-    </p>
-    <p
-      *ngSwitchCase="SIGNUP_STATE.SUCCESS"
-      [attr.data-test]="'sign-up-success'"
-    >
-      Thank you!
-    </p>
-    <p *ngSwitchCase="SIGNUP_STATE.ERROR" [attr.data-test]="'sign-up-error'">
-      Sorry, an error occurred. Please try again!
-    </p>
-  </ng-container>
 </ng-container>

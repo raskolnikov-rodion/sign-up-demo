@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.home {
+  display: grid;
+  grid-template: repeat(2, min-content) auto / repeat(2, 1fr);
+  grid-template-areas:
+    'header product'
+    'message product'
+    'form product';
+  column-gap: 2rem;
+  width: 70%;
+  background-color: var(--color-background-light);
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0 0 0 / 50%);
+  padding: 2rem;
+
+  &__header {
+    grid-area: header;
+    color: var(--color-primary);
+    font-weight: bold;
+  }
+
+  &__message {
+    grid-area: message;
+  }
+
+  &__product {
+    grid-area: product;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  &__sign-up {
+    grid-area: form;
+  }
+}
+
+@media (width < 500px) {
+  .home {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+@media (width < 900px) {
+  .home {
+    display: block;
+
+    &__product {
+      display: none;
+    }
+  }
+}

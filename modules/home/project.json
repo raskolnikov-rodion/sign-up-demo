@@ -26,6 +26,9 @@
       "options": {
         "lintFilePatterns": ["modules/home/**/*.ts", "modules/home/**/*.html"]
       }
+    },
+    "stylelint": {
+      "command": "stylelint 'modules/home/**/*.scss'"
     }
   }
 }

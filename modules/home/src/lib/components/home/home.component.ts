@@ -5,6 +5,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
   standalone: true,
   selector: 'gus-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [SignUpComponent],
 })

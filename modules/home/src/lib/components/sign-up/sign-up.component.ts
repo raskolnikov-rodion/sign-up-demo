@@ -12,8 +12,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BehaviorSubject } from 'rxjs';
 import { CustomerData, SignUpService } from '../../services/sign-up.service';
 
@@ -28,6 +30,7 @@ enum SIGNUP_STATE {
   standalone: true,
   selector: 'gus-sign-up',
   templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     MatFormFieldModule,
@@ -38,6 +41,8 @@ enum SIGNUP_STATE {
     AsyncPipe,
     NgSwitch,
     NgSwitchCase,
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class SignUpComponent {
