@@ -10,6 +10,7 @@
     "affected:test": "nx affected -t test --parallel=3",
     "dep-graph": "nx dep-graph",
     "e2e:website:watch": "nx e2e website-e2e --watch",
+    "start:website": "nx serve website",
     "start:mock-server": "node apps/mock-server/mock-server.js",
     "prepare": "husky install"
   },
