@@ -1,2 +1,15 @@
-<h1 [attr.data-test]="'home-header'">Welcome!</h1>
-<gus-sign-up></gus-sign-up>
+<section class="home">
+  <h1 class="home__header" [attr.data-test]="'home-header'">
+    You're one step away from a Smile!
+  </h1>
+  <p class="home__message">
+    Join +10000 Smile customers and receive exclusive deals, directly in your
+    inbox!
+  </p>
+  <img
+    class="home__product"
+    src="../../assets/img/products.jpg"
+    alt="Products"
+  />
+  <gus-sign-up class="home__sign-up"></gus-sign-up>
+</section>
