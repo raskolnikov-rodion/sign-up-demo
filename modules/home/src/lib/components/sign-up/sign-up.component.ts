@@ -46,7 +46,7 @@ export class SignUpComponent {
     email: ['', [Validators.required, Validators.email]],
   });
 
-  private service = inject(SignUpService);
+  private readonly service = inject(SignUpService);
 
   private readonly _state$ = new BehaviorSubject<SIGNUP_STATE>(
     SIGNUP_STATE.WAITING_SUBMISSION
