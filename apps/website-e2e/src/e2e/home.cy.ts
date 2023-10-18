@@ -5,6 +5,7 @@ import {
   getLastNameInput,
   getSignUpForm,
   getSignUpSubmit,
+  getSignUpSuccess,
 } from '../support/home.po';
 
 describe('Home Page', () => {
@@ -23,7 +24,7 @@ describe('Home Page', () => {
     });
 
     it('should allow user to enter data and sign-up', () => {
-      getSignUpForm().should('exist');
+      getSignUpForm().should('be.visible');
       getSignUpSubmit().should('be.disabled');
       getFirstNameInput().focus().type('John');
       getSignUpSubmit().should('be.disabled');
@@ -35,6 +36,8 @@ describe('Home Page', () => {
       getFirstNameInput().should('have.value', '');
       getLastNameInput().should('have.value', '');
       getEmailInput().should('have.value', '');
+      getSignUpSuccess().should('be.visible');
+      getSignUpSuccess().should('not.exist');
     });
   });
 });
