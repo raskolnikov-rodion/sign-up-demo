@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.not-found {
+  padding: 2rem;
+  width: max-content;
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0 0 0 / 50%);
+  background-color: var(--color-background-light);
+}
+
+@media (width < 500px) {
+  .not-found {
+    width: 100%;
+    border-radius: 0;
+  }
+}
