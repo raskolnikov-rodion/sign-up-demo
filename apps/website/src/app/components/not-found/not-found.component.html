@@ -1,7 +1,11 @@
 <article class="not-found">
-  <h1 [attr.data-test]="'not-found-header'">Page not found!</h1>
+  <h1 [attr.data-test]="'not-found-header'">
+    {{ 'APP.NOT_FOUND_COMPONENT.HEADER' | translate }}
+  </h1>
   <p [attr.data-test]="'not-found-message'">
-    Sorry, the page you are looking for does not exist.
+    {{ 'APP.NOT_FOUND_COMPONENT.MESSAGE' | translate }}
   </p>
-  <a routerLink="" [attr.data-test]="'not-found-home-link'">Back to Home</a>
+  <a routerLink="" [attr.data-test]="'not-found-home-link'">
+    {{ 'APP.NOT_FOUND_COMPONENT.HOME_LINK' | translate }}
+  </a>
 </article>
