@@ -11,6 +11,7 @@ import {
 } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { httpInterceptorProvider } from './interceptor/http-interceptor.config';
+import { RootTranslateModule } from './translate.config';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     importProvidersFrom(HttpClientModule),
     ...(isDevMode() ? [] : httpInterceptorProvider),
+    importProvidersFrom(RootTranslateModule),
   ],
 };

@@ -15,6 +15,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { CustomerData, SignUpService } from '../../services/sign-up.service';
 import { SignUpStateComponent } from './sign-up-state/sign-up-state.component';
@@ -35,6 +36,7 @@ import { SIGNUP_STATE } from './sign-up.models';
     AsyncPipe,
     MatButtonModule,
     SignUpStateComponent,
+    TranslateModule,
   ],
 })
 export class SignUpComponent {

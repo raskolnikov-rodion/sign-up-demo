@@ -6,7 +6,9 @@
     [attr.data-test]="'sign-up-form'"
   >
     <mat-form-field>
-      <mat-label>First Name</mat-label>
+      <mat-label>
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.LABEL' | translate }}
+      </mat-label>
       <input
         matInput
         type="text"
@@ -14,15 +16,21 @@
         [attr.data-test]="'sign-up-first-name'"
       />
       <mat-error *ngIf="form.get('firstName')?.errors?.['required']">
-        Required field.
+        {{
+          'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.REQUIRED' | translate
+        }}
       </mat-error>
       <mat-error *ngIf="form.get('firstName')?.errors?.['minlength']">
-        A valid first name has at least 3 characters.
+        {{
+          'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.MIN_LENGTH' | translate
+        }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Last Name</mat-label>
+      <mat-label>
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.LABEL' | translate }}
+      </mat-label>
       <input
         matInput
         type="text"
@@ -30,15 +38,19 @@
         [attr.data-test]="'sign-up-last-name'"
       />
       <mat-error *ngIf="form.get('lastName')?.errors?.['required']">
-        Required field.
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.REQUIRED' | translate }}
       </mat-error>
       <mat-error *ngIf="form.get('lastName')?.errors?.['minlength']">
-        A valid last name has at least 3 characters.
+        {{
+          'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.MIN_LENGTH' | translate
+        }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Email</mat-label>
+      <mat-label>
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.LABEL' | translate }}
+      </mat-label>
       <input
         matInput
         type="email"
@@ -46,10 +58,10 @@
         [attr.data-test]="'sign-up-email'"
       />
       <mat-error *ngIf="form.get('email')?.errors?.['required']">
-        Required field.
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.REQUIRED' | translate }}
       </mat-error>
       <mat-error *ngIf="form.get('email')?.errors?.['email']">
-        Invalid email.
+        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.EMAIL' | translate }}
       </mat-error>
     </mat-form-field>
 
@@ -63,7 +75,7 @@
       class="form__submit"
       [attr.data-test]="'sign-up-submit'"
     >
-      Join
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.SUBMIT' | translate }}
     </button>
   </form>
 </ng-container>

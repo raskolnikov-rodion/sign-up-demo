@@ -5,20 +5,26 @@
     [attr.data-test]="'sign-up-loading'"
   >
     <mat-spinner class="state__spinner" color="accent"></mat-spinner>
-    <span>Preparing a special offer for you...</span>
+    <span>
+      {{ 'HOME.SIGN_UP_STATE_COMPONENT.LOADING' | translate }}
+    </span>
   </div>
   <div
     *ngSwitchCase="SIGNUP_STATE.SUCCESS"
     class="state state--success"
     [attr.data-test]="'sign-up-success'"
   >
-    <span>Thank you! Check your inbox for a smiley gift!</span>
+    <span>
+      {{ 'HOME.SIGN_UP_STATE_COMPONENT.SUCCESS' | translate }}
+    </span>
   </div>
   <div
     *ngSwitchCase="SIGNUP_STATE.ERROR"
     class="state state--error"
     [attr.data-test]="'sign-up-error'"
   >
-    <span>Sorry, an error occurred. Please try again!</span>
+    <span>
+      {{ 'HOME.SIGN_UP_STATE_COMPONENT.ERROR' | translate }}
+    </span>
   </div>
 </ng-container>

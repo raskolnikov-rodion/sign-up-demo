@@ -28,7 +28,7 @@
       }
     },
     "stylelint": {
-      "command": "stylelint 'modules/home/**/*.scss'"
+      "command": "stylelint \"modules/home/**/*.scss\""
     }
   }
 }
