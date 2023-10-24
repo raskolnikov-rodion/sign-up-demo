@@ -78,7 +78,7 @@
       }
     },
     "stylelint": {
-      "command": "stylelint 'apps/website/**/*.scss'"
+      "command": "stylelint \"apps/website/**/*.scss\""
     },
     "test": {
       "executor": "@nx/jest:jest",
