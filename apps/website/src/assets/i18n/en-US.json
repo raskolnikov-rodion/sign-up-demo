@@ -1,0 +1,40 @@
+{
+  "HOME": {
+    "HOME_COMPONENT": {
+      "HEADER": "You're one step away from a Smile!",
+      "MESSAGE": "Join +10000 Smile customers and receive exclusive deals, directly in your inbox!",
+      "PRODUCT_ALT": "Products"
+    },
+    "SIGN_UP_COMPONENT": {
+      "FORM": {
+        "FIRST_NAME": {
+          "LABEL": "First Name",
+          "ERROR": {
+            "REQUIRED": "Required field.",
+            "MIN_LENGTH": "A valid first name has at least 3 characters."
+          }
+        },
+        "LAST_NAME": {
+          "LABEL": "Last Name",
+          "ERROR": {
+            "REQUIRED": "Required field.",
+            "MIN_LENGTH": "A valid last name has at least 3 characters."
+          }
+        },
+        "EMAIL": {
+          "LABEL": "Email",
+          "ERROR": {
+            "REQUIRED": "Required field.",
+            "EMAIL": "Invalid email."
+          }
+        },
+        "SUBMIT": "Join"
+      }
+    },
+    "SIGN_UP_STATE_COMPONENT": {
+      "LOADING": "Preparing a special offer for you...",
+      "SUCCESS": "Thank you! Check your inbox for a smiley gift!",
+      "ERROR": "Sorry, an error occurred. Please try again!"
+    }
+  }
+}

@@ -1,15 +1,14 @@
 <article class="home">
   <h1 class="home__header" [attr.data-test]="'home-header'">
-    You're one step away from a Smile!
+    {{ 'HOME.HOME_COMPONENT.HEADER' | translate }}
   </h1>
   <p class="home__message">
-    Join +10000 Smile customers and receive exclusive deals, directly in your
-    inbox!
+    {{ 'HOME.HOME_COMPONENT.MESSAGE' | translate }}
   </p>
   <img
     class="home__product"
-    src="../../assets/img/products.jpg"
-    alt="Products"
+    src="assets/img/products.jpg"
+    [alt]="'HOME.HOME_COMPONENT.PRODUCT_ALT' | translate"
   />
   <gus-sign-up class="home__sign-up"></gus-sign-up>
 </article>
