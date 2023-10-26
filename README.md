@@ -21,6 +21,7 @@ Some of the techniques illustrated in this demo:
 - using observables and OnPush change detection for efficient, reactive UI updates
 - performing HTTP requests using a service
 - using HTTP interceptors
+- using type guards
 
 ## Running The App Via Local Server
 
