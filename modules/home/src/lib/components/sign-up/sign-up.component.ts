@@ -17,9 +17,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
-import { CustomerData, SignUpService } from '../../services/sign-up.service';
+import { SignUpService } from '../../services/sign-up.service';
 import { SignUpStateComponent } from './sign-up-state/sign-up-state.component';
 import { SIGNUP_STATE } from './sign-up.models';
+import { isCustomerData } from '../../services/models';
 
 @Component({
   standalone: true,
@@ -57,9 +58,9 @@ export class SignUpComponent {
   readonly SIGNUP_STATE = SIGNUP_STATE;
 
   onSubmit() {
-    if (!this.form.valid) return;
+    if (!this.form.valid || !isCustomerData(this.form.value)) return;
     this._state$.next(SIGNUP_STATE.LOADING);
-    this.service.signUpCustomer(this.form.value as CustomerData).subscribe({
+    this.service.signUpCustomer(this.form.value).subscribe({
       next: () => this.onSignUpSuccess(),
       error: () => this.onSignUpError(),
     });
