@@ -4,7 +4,8 @@ import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { delay, of, throwError } from 'rxjs';
-import { CustomerData, SignUpService } from '../../services/sign-up.service';
+import { CustomerData } from '../../services/models';
+import { SignUpService } from '../../services/sign-up.service';
 import { SignUpComponent } from './sign-up.component';
 
 describe('SignUpComponent', () => {
