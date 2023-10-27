@@ -1,3 +1,7 @@
 <main>
   <router-outlet></router-outlet>
+  <gus-language-toggle
+    [text]="'APP.LANGUAGE_TOGGLE_COMPONENT' | translate"
+    (toggle)="onLanguageToggle()"
+  ></gus-language-toggle>
 </main>

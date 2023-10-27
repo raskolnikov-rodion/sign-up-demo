@@ -1,0 +1,48 @@
+{
+  "APP": {
+    "NOT_FOUND_COMPONENT": {
+      "HEADER": "Página não encontrada!",
+      "MESSAGE": "Desculpe, a página que você procura não existe.",
+      "HOME_LINK": "Voltar à página inicial"
+    },
+    "LANGUAGE_TOGGLE_COMPONENT": "English version"
+  },
+  "HOME": {
+    "HOME_COMPONENT": {
+      "HEADER": "Você está a um passo de um Smile!",
+      "MESSAGE": "Junte-se a +10000 clientes Smile e receba ofertas exclusivas, direto no seu email!",
+      "PRODUCT_ALT": "Produtos"
+    },
+    "SIGN_UP_COMPONENT": {
+      "FORM": {
+        "FIRST_NAME": {
+          "LABEL": "Nome",
+          "ERROR": {
+            "REQUIRED": "Campo obrigatório.",
+            "MIN_LENGTH": "Ao menos 3 letras."
+          }
+        },
+        "LAST_NAME": {
+          "LABEL": "Sobrenome",
+          "ERROR": {
+            "REQUIRED": "Campo obrigatório.",
+            "MIN_LENGTH": "Ao menos 3 letras."
+          }
+        },
+        "EMAIL": {
+          "LABEL": "Email",
+          "ERROR": {
+            "REQUIRED": "Campo obrigatório.",
+            "EMAIL": "Email inválido."
+          }
+        },
+        "SUBMIT": "Inscrever"
+      }
+    },
+    "SIGN_UP_STATE_COMPONENT": {
+      "LOADING": "Preparando uma oferta especial para você...",
+      "SUCCESS": "Obrigado! Verifique seu email para um presente sorridente!",
+      "ERROR": "Desculpe, aconteceu um erro. Por favor, tente novamente!"
+    }
+  }
+}

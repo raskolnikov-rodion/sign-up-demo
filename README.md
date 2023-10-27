@@ -14,6 +14,7 @@ Some of the techniques illustrated in this demo:
 - routing and lazy loading resources
 - responsive design
 - automated unit and end-to-end testing
+- support for multiple languages
 - componentization applying the presentational/container pattern
 - sharing data between components
 - using [BEM](https://getbem.com/) pattern for managing styles
