@@ -4,7 +4,8 @@
       "HEADER": "Page not found!",
       "MESSAGE": "Sorry, the page you are looking for does not exist.",
       "HOME_LINK": "Back to Home"
-    }
+    },
+    "LANGUAGE_TOGGLE_COMPONENT": "Versão em Português"
   },
   "HOME": {
     "HOME_COMPONENT": {
