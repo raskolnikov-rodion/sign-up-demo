@@ -1,70 +1,66 @@
-<ng-container *ngIf="state$ | async as state">
-  <form
-    [formGroup]="form"
-    (ngSubmit)="onSubmit()"
-    class="form"
-    [attr.data-test]="'sign-up-form'"
-  >
-    <mat-form-field>
-      <mat-label>
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.LABEL' | translate }}
-      </mat-label>
-      <input
-        matInput
-        type="text"
-        formControlName="firstName"
-        [attr.data-test]="'sign-up-first-name'"
-      />
-      <mat-error *ngIf="form.get('firstName')?.errors?.['required']">
-        {{
-          'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.REQUIRED' | translate
-        }}
-      </mat-error>
-      <mat-error *ngIf="form.get('firstName')?.errors?.['minlength']">
-        {{
-          'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.MIN_LENGTH' | translate
-        }}
-      </mat-error>
-    </mat-form-field>
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+  class="form"
+  [attr.data-test]="'sign-up-form'"
+>
+  <mat-form-field>
+    <mat-label>
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.LABEL' | translate }}
+    </mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="firstName"
+      [attr.data-test]="'sign-up-first-name'"
+    />
+    <mat-error *ngIf="form.get('firstName')?.errors?.['required']">
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.REQUIRED' | translate }}
+    </mat-error>
+    <mat-error *ngIf="form.get('firstName')?.errors?.['minlength']">
+      {{
+        'HOME.SIGN_UP_COMPONENT.FORM.FIRST_NAME.ERROR.MIN_LENGTH' | translate
+      }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.LABEL' | translate }}
-      </mat-label>
-      <input
-        matInput
-        type="text"
-        formControlName="lastName"
-        [attr.data-test]="'sign-up-last-name'"
-      />
-      <mat-error *ngIf="form.get('lastName')?.errors?.['required']">
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.REQUIRED' | translate }}
-      </mat-error>
-      <mat-error *ngIf="form.get('lastName')?.errors?.['minlength']">
-        {{
-          'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.MIN_LENGTH' | translate
-        }}
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.LABEL' | translate }}
+    </mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="lastName"
+      [attr.data-test]="'sign-up-last-name'"
+    />
+    <mat-error *ngIf="form.get('lastName')?.errors?.['required']">
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.REQUIRED' | translate }}
+    </mat-error>
+    <mat-error *ngIf="form.get('lastName')?.errors?.['minlength']">
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.LAST_NAME.ERROR.MIN_LENGTH' | translate }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-      <mat-label>
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.LABEL' | translate }}
-      </mat-label>
-      <input
-        matInput
-        type="email"
-        formControlName="email"
-        [attr.data-test]="'sign-up-email'"
-      />
-      <mat-error *ngIf="form.get('email')?.errors?.['required']">
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.REQUIRED' | translate }}
-      </mat-error>
-      <mat-error *ngIf="form.get('email')?.errors?.['email']">
-        {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.EMAIL' | translate }}
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.LABEL' | translate }}
+    </mat-label>
+    <input
+      matInput
+      type="email"
+      formControlName="email"
+      [attr.data-test]="'sign-up-email'"
+    />
+    <mat-error *ngIf="form.get('email')?.errors?.['required']">
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.REQUIRED' | translate }}
+    </mat-error>
+    <mat-error *ngIf="form.get('email')?.errors?.['email']">
+      {{ 'HOME.SIGN_UP_COMPONENT.FORM.EMAIL.ERROR.EMAIL' | translate }}
+    </mat-error>
+  </mat-form-field>
 
+  <ng-container *ngIf="state$ | async as state">
     <gus-sign-up-state [state]="state"></gus-sign-up-state>
 
     <button
@@ -77,5 +73,5 @@
     >
       {{ 'HOME.SIGN_UP_COMPONENT.FORM.SUBMIT' | translate }}
     </button>
-  </form>
-</ng-container>
+  </ng-container>
+</form>
