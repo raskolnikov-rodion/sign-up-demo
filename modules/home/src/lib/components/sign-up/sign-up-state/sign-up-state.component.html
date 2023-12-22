@@ -1,30 +1,24 @@
-<ng-container [ngSwitch]="state">
-  <div
-    *ngSwitchCase="SIGNUP_STATE.LOADING"
-    class="state state--loading"
-    [attr.data-test]="'sign-up-loading'"
-  >
-    <mat-spinner class="state__spinner" color="accent"></mat-spinner>
-    <span>
-      {{ 'HOME.SIGN_UP_STATE_COMPONENT.LOADING' | translate }}
-    </span>
-  </div>
-  <div
-    *ngSwitchCase="SIGNUP_STATE.SUCCESS"
-    class="state state--success"
-    [attr.data-test]="'sign-up-success'"
-  >
-    <span>
-      {{ 'HOME.SIGN_UP_STATE_COMPONENT.SUCCESS' | translate }}
-    </span>
-  </div>
-  <div
-    *ngSwitchCase="SIGNUP_STATE.ERROR"
-    class="state state--error"
-    [attr.data-test]="'sign-up-error'"
-  >
-    <span>
-      {{ 'HOME.SIGN_UP_STATE_COMPONENT.ERROR' | translate }}
-    </span>
-  </div>
-</ng-container>
+@switch (state) {
+  @case (SIGNUP_STATE.LOADING) {
+    <div class="state state--loading" [attr.data-test]="'sign-up-loading'">
+      <mat-spinner class="state__spinner" color="accent"></mat-spinner>
+      <span>
+        {{ 'HOME.SIGN_UP_STATE_COMPONENT.LOADING' | translate }}
+      </span>
+    </div>
+  }
+  @case (SIGNUP_STATE.SUCCESS) {
+    <div class="state state--success" [attr.data-test]="'sign-up-success'">
+      <span>
+        {{ 'HOME.SIGN_UP_STATE_COMPONENT.SUCCESS' | translate }}
+      </span>
+    </div>
+  }
+  @case (SIGNUP_STATE.ERROR) {
+    <div class="state state--error" [attr.data-test]="'sign-up-error'">
+      <span>
+        {{ 'HOME.SIGN_UP_STATE_COMPONENT.ERROR' | translate }}
+      </span>
+    </div>
+  }
+}
